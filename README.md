@@ -9,14 +9,14 @@ Developpement in progress...
 
 
 
-## Run Localy
+## Run localy the project
 
 &nbsp;
 
 Clone the project
 
 ```bash
-git@github.com:francoiscoche/jobme.git
+git clone git@github.com:francoiscoche/jobme.git
 ```
 Run the docker-compose
 
@@ -27,6 +27,7 @@ docker-compose up -d
 
 Copy the vendor folder to the container (did for performance purpose)
 ```bash
+cd .\app\
 docker cp  vendor jobme-php8:/var/www/app
 docker cp  var jobme-php8:/var/www/app
 ```
@@ -43,8 +44,9 @@ Start the server
 symfony serve -d
 ```
 
+*The application is available at http://127.0.0.1:9000*
 
-
+&nbsp;
 ## Author
 
 [@francoiscoche](https://github.com/francoiscoche)
