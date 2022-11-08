@@ -5,3 +5,7 @@
 .collapse {
     visibility: visible!important;
 }
+
+img.avatar {
+    max-width: 200px;
+}
