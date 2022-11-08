@@ -24,7 +24,7 @@ class AccountFixtures extends Fixture
         // $product = new Product();
         // $manager->persist($product);
 
-        $faker = Factory::create('fr_FR');
+        $faker = Factory::create('it_IT');
 
 
         for ($i=0; $i < 50; $i++) {
@@ -37,7 +37,10 @@ class AccountFixtures extends Fixture
                 ->setFirstname($faker->firstname())
                 ->setLastname($faker->lastname())
                 ->setPhone($faker->phoneNumber())
-                ->setAddress($faker->address());
+                ->setAddress($faker->streetAddress())
+                ->setPostCode($faker->postcode())
+                ->setCity($faker->city())
+                ->setPresentation($faker->realText(100));
 
             $manager->persist($user);
         }

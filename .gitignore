@@ -25,3 +25,5 @@ app/public/build/
 app/npm-debug.log
 app/yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+app/public/images
