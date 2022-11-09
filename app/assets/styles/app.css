@@ -2,10 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+img.avatar {
+    max-width: 200px;
+}
+
+/* JOBBER PAGE */
+.card-jobber {
+    transition: transform .2s ease-out;
+}
+.card-jobber:hover {
+    transform: translate(0, -10px);
+}
+
+
+/* HOME PAGE */
 .collapse {
     visibility: visible!important;
 }
 
-img.avatar {
-    max-width: 200px;
+.card-img {
+    overflow: hidden;
+}
+.card-img img {
+    display: block;
+    transition: transform .2s; /* Animation */
+}
+.card-img:hover img {
+
+    transform: scale(1.1);
+
 }
