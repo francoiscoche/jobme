@@ -17,14 +17,24 @@
                 />
             </div>
             <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
+
                 {{ form_start(registrationForm) }}
                     {{ form_row(registrationForm.email) }}
-                    {{ form_row(registrationForm.plainPassword, {
-                        label: 'Password'
-                    }) }}
-                    {{ form_row(registrationForm.agreeTerms) }}
+                    <br>
+                    {{ form_row(registrationForm.plainPassword) }}
+                    <br>
+                    {{ form_row(registrationForm.firstname) }}
+                    <br>
+                    {{ form_row(registrationForm.lastname) }}
+                    <br>
+                    {{ form_row(registrationForm.roles) }}
+                    <br>
+                    {{ form_row(registrationForm.address) }}
+                    <br>
+                    {{ form_row(registrationForm.phone) }}
+                    <br>
 
-                    <button type="submit" class="btn">Register</button>
+
                 {{ form_end(registrationForm) }}
             </div>
             </div>
