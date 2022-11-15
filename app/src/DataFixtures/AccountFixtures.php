@@ -40,6 +40,7 @@ class AccountFixtures extends Fixture
                 ->setAddress($faker->streetAddress())
                 ->setPostCode($faker->postcode())
                 ->setCity($faker->city())
+                ->setRoles(['ROLE_JOBBER'])
                 ->setPresentation($faker->realText(100));
 
             $manager->persist($user);

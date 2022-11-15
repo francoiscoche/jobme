@@ -12,7 +12,7 @@ class JobberController extends AbstractController
     #[Route('/jobber', name: 'app_jobber')]
     public function index(UserRepository $userRepository): Response
     {
-        $users = $userRepository->findAll();
+        $users = $userRepository->findUsers('ROLE_JOBBER');
 
         return $this->render('jobber/index.html.twig', [
             'users' => $users,

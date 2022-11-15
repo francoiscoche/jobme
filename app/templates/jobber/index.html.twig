@@ -6,8 +6,8 @@
 
 <div class="container mx-auto">
     <h1 class="text-5xl text-center mt-24 mb-8">La nostra selezione di Jobber</h1>
+    <span class="text-3xl font-semibold">{{ users |length }} disponibile</span>
     <div class="flex flex-row flex-wrap mt-8 justify-evenly">
-
         {% for user in users %}
             <div class="card-jobber flex justify-center m-3">
             <div class="rounded-lg shadow-lg bg-white max-w-xs">
