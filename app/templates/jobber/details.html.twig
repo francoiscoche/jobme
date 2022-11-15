@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello JobberController!{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto">
+        <div class="w-2/3 mx-auto mt-6">
+            <a href="{{ path("app_jobber") }}" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Torna ai profili
+            </a>
+        </div>
+
+        <div class="w-2/3 mx-auto my-8 leading-6">
+            <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+                <img class=" w-full h-96 md:h-auto object-cover md:w-48" src="{{ asset('/images/profile/unknown-profile.jpg') }}" alt="" />
+                <div class="p-6 flex flex-col justify-start">
+                <h5 class="text-gray-900 text-xl font-medium mb-2">{{ user.firstname }}</h5>
+                <h5 class="text-xm font-medium mb-2">{{ user.city }}</h5>
+                {# <p class="text-gray-700 text-base mb-4">
+                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                </p> #}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="w-2/3 mx-auto my-8 leading-6">
+            <h1 class="text-gray-900 text-xl font-medium mb-2">A proposito di {{ user.firstname }}</h1>
+                <h2>{{ user.presentation }}</h2>
+        </div>
+        <div class="w-2/3 mx-auto my-8 leading-6">
+            <h1 class="text-gray-900 text-xl font-medium mb-2">A proposito dei suoi servizi</h1>
+            <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus praesentium saepe voluptates, non totam minima, nesciunt harum dolor dolorem id error repellat a quasi qui. Dolore earum quae officia explicabo?</h1>
+        </div>
+        <div class="w-2/3 mx-auto my-6">
+            <a href="" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Contattami
+            </a>
+        </div>
+
+    </div>
+
+{% endblock %}

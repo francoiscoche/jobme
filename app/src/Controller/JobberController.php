@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,6 +17,14 @@ class JobberController extends AbstractController
 
         return $this->render('jobber/index.html.twig', [
             'users' => $users,
+        ]);
+    }
+
+    #[Route('/jobber/{id}', name:'app_details', methods: ['GET'])]
+    public function details(User $user): Response
+    {
+        return $this->render('jobber/details.html.twig', [
+            'user' => $user
         ]);
     }
 }
