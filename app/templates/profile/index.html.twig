@@ -2,7 +2,23 @@
 {% block title %}Hello ProfileController!{% endblock %}
 {% block body %}
    <div class="container mx-auto mx-5">
-      <div class="mt-8">
+      <div class="w-2/3 mx-auto mt-8">
+      <pre>
+         {# {{ dump(app.user.roles) }} #}
+      </pre>
+         <span class="text-gray-900 text-xl font-medium mb-2">Buongiorno {{ app.user.firstname }}! Hai un profilo
+            {% if "ROLE_JOBBER" in app.user.roles %}
+                  <span class="text-blue-600 hover:text-blue-700 transition duration-150 ease-in-out" data-bs-toggle="tooltip" title="Puoi fare domanda per offerte di lavoro e altri utenti possono contattarti per svolgere missioni.">
+                     JOBBER
+                  </span>
+            {% else %}
+            <span class="text-blue-600 hover:text-blue-700 transition duration-150 ease-in-out" data-bs-toggle="tooltip" title="Puoi pubblicare annunci e contattare lavoratori.">
+               RICHIEDENTE
+            </span>
+            {% endif %}
+         </span>
+      </div>
+      <div class="w-2/3 mx-auto mt-8">
          <div class="mb-3 xl:w-96">
             <input
                type="text"
