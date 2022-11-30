@@ -27,103 +27,20 @@
         </div>
     </div>
 
-    <div class="flex justify-center my-4">
-        <div class="card-home mx-4 rounded-lg bg-white max-w-xs">
-            <div class="card-img rounded-lg">
-                <a href="#!">
-                    <img class="" src="{{ asset('/images/homepage/bricolage.svg') }}" alt=""/>
-                </a>
+    <div class="flex flex-wrap max-w-4xl justify-center my-4">
+        {% for category in categories %}
+            <div class="card-home mx-4 rounded-lg bg-white max-w-xs">
+                <div class="card-img rounded-lg">
+                    <a href="#!">
+                        <img class="" src="{{ asset(category.image) }}" alt=""/>
+                    </a>
+                </div>
+                <div class="">
+                    <h5 class="text-gray-900 text-xl font-medium">{{ category.name }}</h5>
+                </div>
             </div>
-            <div class="">
-                <h5 class="text-gray-900 text-xl font-medium">Bricolage</h5>
-            </div>
-        </div>
-        <div class="card-home mx-4 rounded-lg bg-white max-w-xs">
-            <div class="card-img rounded-lg">
-                <a href="#!">
-                    <img class="" src="{{ asset('/images/homepage/jardinage.svg') }}" alt=""/>
-                </a>
-            </div>
-            <div class="">
-                <h5 class="text-gray-900 text-xl font-medium">Giardinaggio</h5>
-            </div>
-        </div>
-        <div class="card-home mx-4 rounded-lg bg-white max-w-xs">
-            <div class="card-img rounded-lg">
-                <a href="#!">
-                    <img class="" src="{{ asset('/images/homepage/demenagement.svg') }}" alt=""/>
-                </a>
-            </div>
-            <div class="">
-                <h5 class="text-gray-900 text-xl font-medium">Trasloco</h5>
-            </div>
-        </div>
+        {% endfor %}
     </div>
-    <div class="flex justify-center my-4">
-        <div class="card-home mx-4 rounded-lg bg-white max-w-xs">
-            <div class="card-img rounded-lg">
-                <a href="#!">
-                    <img class="" src="{{ asset('/images/homepage/enfants.svg') }}" alt=""/>
-                </a>
-            </div>
-            <div class="">
-                <h5 class="text-gray-900 text-xl font-medium">Servizio di babysitter</h5>
-            </div>
-        </div>
-        <div class="card-home mx-4 rounded-lg bg-white max-w-xs">
-            <div class="card-img rounded-lg">
-                <a href="#!">
-                    <img class="" src="{{ asset('/images/homepage/chiens.svg') }}" alt=""/>
-                </a>
-            </div>
-            <div class="">
-                <h5 class="text-gray-900 text-xl font-medium">Animali</h5>
-            </div>
-        </div>
-        <div class="card-home mx-4 rounded-lg bg-white max-w-xs">
-            <div class="card-img rounded-lg">
-                <a href="#!">
-                    <img class="" src="{{ asset('/images/homepage/informatic.svg') }}" alt=""/>
-                </a>
-            </div>
-            <div class="">
-                <h5 class="text-gray-900 text-xl font-medium">Informatica</h5>
-            </div>
-        </div>
-    </div>
-    <div class="flex justify-center my-4">
-        <div class="card-home mx-4 rounded-lg bg-white max-w-xs">
-            <div class="card-img rounded-lg">
-                <a href="#!">
-                    <img class="" src="{{ asset('/images/homepage/lezioni.svg') }}" alt=""/>
-                </a>
-            </div>
-            <div class="">
-                <h5 class="text-gray-900 text-xl font-medium">Lezioni private</h5>
-            </div>
-        </div>
-        <div class="card-home mx-4 rounded-lg bg-white max-w-xs">
-            <div class="card-img rounded-lg">
-                <a href="#!">
-                    <img class="" src="{{ asset('/images/homepage/courses.svg') }}" alt=""/>
-                </a>
-            </div>
-            <div class="">
-                <h5 class="text-gray-900 text-xl font-medium">Aiuto domestico</h5>
-            </div>
-        </div>
-        <div class="card-home mx-4 rounded-lg bg-white max-w-xs">
-            <div class="card-img rounded-lg">
-                <a href="#!">
-                    <img class="" src="{{ asset('/images/homepage/maisons.svg') }}" alt=""/>
-                </a>
-            </div>
-            <div class="">
-                <h5 class="text-gray-900 text-xl font-medium">Lavori di casa</h5>
-            </div>
-        </div>
-    </div>
-
 
     <!-- Background image -->
 {% endblock %}

@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Category;
 use Faker\Factory;
 use App\Entity\User;
 use Doctrine\Persistence\ObjectManager;
@@ -26,7 +27,30 @@ class AccountFixtures extends Fixture
 
         $faker = Factory::create('it_IT');
 
+        $categories = ["Bricolage", "Giardinaggio", "Trasloco", "Servizio di babysitter", "Animali", "Informatica", "Lezioni private", "Aiuto domestico", "Lavori di casa"];
+        $img = [
+            '/images/homepage/bricolage.svg',
+            '/images/homepage/jardinage.svg',
+            '/images/homepage/demenagement.svg',
+            '/images/homepage/enfants.svg',
+            '/images/homepage/chiens.svg',
+            '/images/homepage/informatic.svg',
+            '/images/homepage/lezioni.svg',
+            '/images/homepage/courses.svg',
+            '/images/homepage/maisons.svg',
+        ];
 
+        // Category
+        for ($i=0; $i < count($categories); $i++) { 
+            $category = new Category();
+
+            $category->setName($categories[$i])
+                    ->setImage($img[$i]);
+            $manager->persist($category);
+        }
+
+
+        // User
         for ($i=0; $i < 50; $i++) {
             $user = new User();
 
