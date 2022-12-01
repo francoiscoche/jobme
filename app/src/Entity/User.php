@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -52,6 +54,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\OneToOne(mappedBy: 'user', cascade: ['persist', 'remove'])]
     private ?Profile $profile = null;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Advert::class, orphanRemoval: true)]
+    private Collection $adverts;
+
+    public function __construct()
+    {
+        $this->adverts = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -225,6 +235,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         $this->profile = $profile;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Advert>
+     */
+    public function getAdverts(): Collection
+    {
+        return $this->adverts;
+    }
+
+    public function addAdvert(Advert $advert): self
+    {
+        if (!$this->adverts->contains($advert)) {
+            $this->adverts->add($advert);
+            $advert->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdvert(Advert $advert): self
+    {
+        if ($this->adverts->removeElement($advert)) {
+            // set the owning side to null (unless already changed)
+            if ($advert->getUser() === $this) {
+                $advert->setUser(null);
+            }
+        }
 
         return $this;
     }

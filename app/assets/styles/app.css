@@ -6,6 +6,10 @@ img.avatar {
     max-width: 200px;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* JOBBER PAGE */
 .card-jobber {
     transition: transform .2s ease-out;

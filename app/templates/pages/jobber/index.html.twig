@@ -6,16 +6,17 @@
 
 <div class="container mx-auto">
     <h1 class="text-5xl text-center mt-24 mb-8">La nostra selezione di Jobber</h1>
-    <span class="text-3xl font-semibold">{{ users |length }} jobber disponibile</span>
+
+    <span class="text-3xl font-semibold">{{ pagination.getTotalItemCount }} jobber disponibile</span>
     <div class="flex flex-row flex-wrap mt-8 justify-evenly">
-        {% for user in users %}
+        {% for user in pagination %}
             <div class="card-jobber flex justify-center m-3">
             <div class="rounded-lg shadow-lg bg-white max-w-xs">
                 <a href="{{ path('app_details', { 'id': user.id }) }}" data-mdb-ripple="true" data-mdb-ripple-color="light">
                     {% if user.profile != null %}
                         <img src="{{ vich_uploader_asset(user.profile, 'imageFile') }}" class="rounded-t-lg" alt="Avatar" />
                     {% else %}
-                        <img src="{{ asset('/images/profile/unknown-profile.jpg') }}" alt="ACME logo">
+                        <img class="mx-auto h-auto max-w-xs" style="max-width:200px" src="{{ asset('/images/profile/unknown-profile.jpg') }}" alt="ACME logo">
                     {% endif %}
                     <div class="p-6">
                         <h5 class="text-gray-900 text-xl font-medium mb-2">{{ user.firstname }}</h5>
@@ -28,6 +29,9 @@
             </div>
             </div>
         {% endfor %}
+        <div class="navigation d-flex justify-content-center my-4">
+            {{ knp_pagination_render(pagination) }}
+        </div>
 
     </div>
 

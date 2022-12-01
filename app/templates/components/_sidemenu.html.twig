@@ -1,0 +1,24 @@
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel"><i class="fas fa-folder-open"></i> Miei record</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        {# <div class="list-group">
+            <a href="" class="list-group-item list-group-item-action active"><i class="fas fa-house-user"></i> Accueil</a>
+        </div> #}
+        <div class="list-group">
+            <a href="{{ path('app_contact_list') }}" class="list-group-item list-group-item-action"><i class="fas fa-envelope"></i> Post in arrivo</a>
+        </div>
+        <div class="list-group">
+            <a href="" class="list-group-item list-group-item-action"><i class="fas fa-paper-plane"></i> Posta inviata</a>
+        </div>
+        <div class="list-group">
+            <a href="" class="list-group-item list-group-item-action"><i class="fas fa-trash-can"></i> Cestino</a>
+        </div>
+       
+        <div class="list-group mt-8">
+            <a href="{{ path('app_advert_list') }}" class="list-group-item list-group-item-action"><i class="fas fa-server"></i> Le mie richieste</a>
+        </div>
+    </div>
+</div>
