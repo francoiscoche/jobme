@@ -7,7 +7,7 @@ img.avatar {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 /* JOBBER PAGE */

@@ -14,13 +14,17 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ContactController extends AbstractController
 {
+    /**
+     * Return to send a message contact
+     *
+     * @param EntityManagerInterface $manager
+     * @param Request $request
+     * @return Response
+     */
     #[Route('/contact', name: 'app_contact', methods: ['POST', 'GET'])]
     public function index(EntityManagerInterface $manager, Request $request): Response
     {
-
         $contact = new Contact();
-        // $user = $this->getUser();
-
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
@@ -38,6 +42,12 @@ class ContactController extends AbstractController
         ]);
     }
 
+    /**
+     * Return the list of messages posted and sent by user
+     *
+     * @param ContactRepository $contactRepository
+     * @return Response
+     */
     #[Route('/contact/list', name: 'app_contact_list', methods: ['GET'])]
     public function listMessages(ContactRepository $contactRepository): Response 
     {
@@ -48,13 +58,18 @@ class ContactController extends AbstractController
         ]);
     }
 
+    /**
+     * Get the list of advertisements posted by user into dashboard user
+     *
+     * @param AdvertRepository $advertRepository
+     * @return Response
+     */
     #[Route('/contact/list-advert', name: 'app_advert_list', methods: ['GET'])]
     public function listAdvert(AdvertRepository $advertRepository): Response
     {
 
         $user = $this->getUser();
         $advert = $advertRepository->findBy(['user' => $user]);
-
 
         return $this->render('pages/contact/advertList.html.twig', [
             'advert' => $advert

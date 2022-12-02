@@ -114,10 +114,7 @@ class AccountFixtures extends Fixture
         ->setPresentation($faker->realText(100));
 
         $manager->persist($admin);
-
-
-
-
+        
         $manager->flush();
     }
 }

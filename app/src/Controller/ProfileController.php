@@ -14,6 +14,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProfileController extends AbstractController
 {
+    /**
+     * Return the user profil modication page
+     *
+     * @param ProfileRepository $profileRepository
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @param Security $security
+     * @return Response
+     */
     #[Route('/profile', name: 'app_profile')]
     public function index(ProfileRepository $profileRepository, Request $request, EntityManagerInterface $manager, Security $security): Response
     {

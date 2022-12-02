@@ -9,6 +9,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+    /**
+     * Return the homePage
+     *
+     * @param CategoryRepository $categoryRepository
+     * @return Response
+     */
     #[Route('/', name: 'app_home')]
     public function index(CategoryRepository $categoryRepository): Response
     {

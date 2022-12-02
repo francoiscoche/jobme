@@ -15,7 +15,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class AdvertController extends AbstractController
 {
-    
+    /**
+     * Return a form to post an advertisement
+     *
+     * @param EntityManagerInterface $em
+     * @param Request $request
+     * @return Response
+     */
     #[Route('/advert', name: 'app_advert', methods: ['POST', 'GET'])]
     #[IsGranted('ROLE_RICHIEDENTE')]
     public function index(EntityManagerInterface $em, Request $request): Response
@@ -35,7 +41,6 @@ class AdvertController extends AbstractController
                 'success',
                 'Il tuo annuncio è stato creato con successo !'
             );
-
             return $this->redirectToRoute('app_list');
         }
 
@@ -44,7 +49,13 @@ class AdvertController extends AbstractController
         ]);
     }
 
-
+    /**
+     * Return the list an advertisements
+     *
+     * @param CategoryRepository $categoryRepository
+     * @param AdvertRepository $advertRepository
+     * @return Response
+     */
     #[Route('/list', name: 'app_list', methods: ['GET'])]
     #[IsGranted('ROLE_USER')]
     public function list(CategoryRepository $categoryRepository, AdvertRepository $advertRepository): Response
@@ -58,6 +69,13 @@ class AdvertController extends AbstractController
         ]);
     }
 
+
+    /**
+     * Return the list of advertisements by Id
+     *
+     * @param Advert $advert
+     * @return Response
+     */
     #[Route('/advert/{id}', name: 'app_advert_detail', methods: ['GET'])]
     #[IsGranted('ROLE_USER')]
     public function detail(Advert $advert):Response

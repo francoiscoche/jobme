@@ -12,8 +12,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CategoryController extends AbstractController
 {
+    /**
+     * Return the list of categories ny Slug
+     *
+     * @param CategoryRepository $categoryRepository
+     * @param Category $category
+     * @param AdvertRepository $advertRepository
+     * @return Response
+     */
     #[Route('/category/{slug}', name: 'app_category', methods:['GET'])]
-    public function index(CategoryRepository $categoryRepository, Category $category, AdvertRepository $advertRepository, Request $request): Response
+    public function index(CategoryRepository $categoryRepository, Category $category, AdvertRepository $advertRepository): Response
     {
         $list =  $advertRepository->findbycategory($category);
         $allCategories = $categoryRepository->findAll();
@@ -22,6 +30,6 @@ class CategoryController extends AbstractController
             'categoria' => $category->getName(),
             'list' => $list,
             'allCategories' => $allCategories
-         ]);
+        ]);
     }
 }

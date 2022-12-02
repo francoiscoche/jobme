@@ -1,103 +1,102 @@
 {% extends 'base.html.twig' %}
 {% block title %}Hello ProfileController!{% endblock %}
 {% block body %}
-   <div class="container mx-auto mx-5">
-      <div class="w-2/3 mx-auto mt-8">
-      <pre>
+<div class="container mx-auto mx-5">
+    <div class="w-2/3 mx-auto mt-8">
+        <pre>
          {# {{ dump(app.user.roles) }} #}
       </pre>
-         <span class="text-gray-900 text-xl font-medium mb-2">Buongiorno {{ app.user.firstname }}! Hai un profilo
-            {% if "ROLE_JOBBER" in app.user.roles %}
-                  <span class="text-blue-600 hover:text-blue-700 transition duration-150 ease-in-out" data-bs-toggle="tooltip" title="Puoi fare domanda per offerte di lavoro e altri utenti possono contattarti per svolgere missioni.">
-                     JOBBER
-                  </span>
-            {% else %}
-            <span class="text-blue-600 hover:text-blue-700 transition duration-150 ease-in-out" data-bs-toggle="tooltip" title="Puoi pubblicare annunci e contattare lavoratori.">
-               RICHIEDENTE
-            </span>
-            {% endif %}
-         </span>
-      </div>
-      <div class="w-2/3 mx-auto mt-8">
-         <div class="mb-3 xl:w-96">
+        <span class="text-gray-900 text-xl font-medium mb-2">Buongiorno {{ app.user.firstname }}! Hai un profilo
+        {% if "ROLE_JOBBER" in app.user.roles %}
+        <span class="text-blue-600 hover:text-blue-700 transition duration-150 ease-in-out" data-bs-toggle="tooltip" title="Puoi fare domanda per offerte di lavoro e altri utenti possono contattarti per svolgere missioni.">
+        JOBBER
+        </span>
+        {% else %}
+        <span class="text-blue-600 hover:text-blue-700 transition duration-150 ease-in-out" data-bs-toggle="tooltip" title="Puoi pubblicare annunci e contattare lavoratori.">
+        RICHIEDENTE
+        </span>
+        {% endif %}
+        </span>
+    </div>
+    <div class="w-2/3 mx-auto mt-8">
+        <div class="mb-3 xl:w-96">
             <input
-               type="text"
-               class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-               id="exampleFormControlInput1"
-               value="{{ app.user.firstname }}"
-            />
+                type="text"
+                class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput1"
+                value="{{ app.user.firstname }}"
+                />
             <br>
             <input
-               type="text"
-               class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-               id="exampleFormControlInput1"
-               value="{{ app.user.lastname }}"
-            />
+                type="text"
+                class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput1"
+                value="{{ app.user.lastname }}"
+                />
             <br>
             <input
-               type="text"
-               class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-               id="exampleFormControlInput1"
-               value="{{ app.user.email }}"
-            /><br>
+                type="text"
+                class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput1"
+                value="{{ app.user.email }}"
+                /><br>
             <input
-               type="text"
-               class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-               id="exampleFormControlInput1"
-               value="{{ app.user.phone }}"
-            />
+                type="text"
+                class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput1"
+                value="{{ app.user.phone }}"
+                />
             <br>
             <input
-               type="text"
-               class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-               id="exampleFormControlInput1"
-               value="{{ app.user.address }}"
-            />
+                type="text"
+                class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput1"
+                value="{{ app.user.address }}"
+                />
             <br>
             <input
-               type="text"
-               class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-               id="exampleFormControlInput1"
-               value="{{ app.user.city }}"
-            />
+                type="text"
+                class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput1"
+                value="{{ app.user.city }}"
+                />
             <br>
             <input
-               type="text"
-               class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-               id="exampleFormControlInput1"
-               value="{{ app.user.postcode }}"
-            />
+                type="text"
+                class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput1"
+                value="{{ app.user.postcode }}"
+                />
             <br>
             <textarea
-               class="
-               form-control
-               block
-               w-full
-               px-3
-               py-1.5
-               text-base
-               font-normal
-               text-gray-700
-               bg-white bg-clip-padding
-               border border-solid border-gray-300
-               rounded
-               transition
-               ease-in-out
-               m-0
-               focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-               "
-               id="exampleFormControlTextarea1"
-               rows="3"
-
-            >{{ app.user.presentation }}</textarea>
+                class="
+                form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                "
+                id="exampleFormControlTextarea1"
+                rows="3"
+                >{{ app.user.presentation }}</textarea>
             <br>
-         <img
-            src="{{ vich_uploader_asset(profile, 'imageFile') }}"
-            class="avatar rounded-lg w-32 mx-auto"
-            alt="Avatar"
-         />
-         {{ form(form) }}
-      </div>
-   </div>
+            <img
+                src="{{ vich_uploader_asset(profile, 'imageFile') }}"
+                class="avatar rounded-lg w-32 mx-auto"
+                alt="Avatar"
+                />
+            {{ form(form) }}
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -28,8 +28,8 @@ docker-compose up -d
 Copy the vendor folder to the container (did for performance purpose)
 ```bash
 cd .\app\
-docker cp  vendor jobme-php8:/var/www/app
-docker cp  var jobme-php8:/var/www/app
+docker cp vendor jobme-php8:/var/www/app
+docker cp var jobme-php8:/var/www/app
 ```
 
 Log into the PHP container
