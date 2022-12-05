@@ -44,7 +44,7 @@ Start the server
 symfony serve -d
 ```
 
-*The application is available at http://127.0.0.1:9000*
+*The application is available at http://127.0.0.1:8000*
 
 &nbsp;
 ## Author
